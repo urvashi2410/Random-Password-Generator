@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Page{% endblock title %}
+{% block css %}
+    <style>
+        #lengthOfPassword{
+        width: 10%
+        }
+
+        #submit{
+        color: red;
+        background-color: black;
+        padding: 0.4rem;
+        border-radius: 35%;
+        margin-top: 1rem;
+        font-size: 18px;
+        transform: scale(0.97);
+        }
+
+        #submit:hover{
+            transform: scale(1) ;
+        }
+    </style>
+{% endblock css %}
+
+{% block body %}
+    <div class="container text-center my-5 ">
+
+        <form action="password/">
+        <label class="mr-3">Length</label>
+    <select name="length" id="lengthOfPassword">
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8" selected>8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option> 
+    </select>
+    <br>
+    <input type="checkbox" name="uppercase" class="checkbox"> <label class="ml-4">Uppercase</label> <br>
+    <input type="checkbox" name="number" class="checkbox"> <label class="ml-4">Numbers</label> <br>
+    <input type="checkbox" name="symbol" class="checkbox"> <label class="ml-4">Symbols</label> <br>
+    <input type="submit" value="Generate Password" id="submit">
+    </form>
+
+    </div>
+{% endblock body %}
